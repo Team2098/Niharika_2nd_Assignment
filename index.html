@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd_Assignment</title>
+    <link rel="stylesheet" href="styles.css" class="">
+    <Style>
+        @media (max-width: 800px) {
+            .main {
+                flex-direction: column-reverse;
+            }
+            .form {
+                margin-bottom: 20px;
+            }
+        }
+    </Style>
+</head>
+<body>
+    <div class="main">
+        <form class="form" id="a-form" action="./home.html" name="Contact Sales form" onsubmit="return validateForm()" method="post">
+            <div class="title">
+                <h1 class="title" style="text-align:center;">Contact Sales</h1>
+                <p style="text-align:center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque felis ex, lacinia in bibendum vitae, aliquet vel diam.</p>
+            </div><br>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label for="name">First Name</label><br>
+                        <input class="form_input" type="text" id="fname" name="firstname" placeholder="Enter First Name" />
+                        <span></span>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label for="name">Last Name</label><br>
+                        <input class="form_input" type="text" id="lname" name="lastname" placeholder="Enter Last Name" />
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="input">
+                <label for="name">Company</label><br>
+                <input class="form_input" type="text" id="Company name" name="companyname" placeholder="Enter Your Company Name" />
+                <span></span>
+            </div>
+            <div class="input">
+                <label for="name">Email</label><br>
+                <input class="form_input" type="email" id="email" name="email" placeholder="Enter Email Address" />
+                <span></span>
+            </div>
+            <div class="input">
+                <label for="name">Phone number</label><br>
+                <input class="form_input" type="phone number" id="numb" name="phone_number" onkeyup="numberonly(this)" placeholder="Enter Phone Number" />
+                <span></span>
+            </div>
+            <div class="input">
+                <label for="name">Message</label><br>
+                <textarea id="Message" rows="5" placeholder="Enter Message" ></textarea>
+                <span></span>
+            </div>
+            <div class="input">
+                <input type="checkbox" id="" name="" value="">
+                <label for="">By Selecting This you Agree Our <a href="T&C.html"> Terms & Conditions</a></label>
+            </div>
+            <div>
+                <button class=" button submit" id="submit" name="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let x = document.forms["Contact Sales form"]["fname"].value;
+            let y = document.forms["Contact Sales form"]["lname"].value;
+            let z = document.forms["Contact Sales form"]["Company name"].value;
+            let w = document.forms["Contact Sales form"]["email"].value;
+            let q = document.forms["Contact Sales form"]["numb"].value;
+
+            if (x == "") {
+                alert("First Name must be filled out");
+                return false;
+            }else if (y == "") {
+                alert("Last Name must be filled out");
+                return false;
+            }else if (z == "") {
+                alert("Company Name must be filled out");
+                return false;
+            }else if (w == "") {
+                alert("Email must be filled out");
+                return false;
+            }else if (q == "") {
+                alert("Phone number must be filled out.");
+                return false;
+            }else {
+                return true;
+            }
+        }
+
+        function numberonly(input) {
+                var num = /[^0-9]/gi;
+                input.value = input.value.replace(num, "");
+            }
+
+    </script>
+
+</body>
+</html>
